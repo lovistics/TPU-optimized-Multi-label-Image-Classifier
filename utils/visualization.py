@@ -1,3 +1,13 @@
+import os
+import numpy as np
+import torch
+from torchvision import transforms
+import matplotlib.pyplot as plt
+import warnings
+
+from config.config import OUTPUT_DIR, SELECTED_CLASSES
+warnings.filterwarnings("ignore")
+
 def display_predictions(model, dataloader, device, num_images=6):
     """Display predictions for random images that contain trained labels."""
     model.eval()
@@ -39,6 +49,7 @@ def display_predictions(model, dataloader, device, num_images=6):
         images_device = images.to(device)
         outputs = model(images_device)
         if str(device).startswith('xla'):
+            import torch_xla
             import torch_xla.core.xla_model as xm
             xm.mark_step()
             outputs = outputs.cpu()
