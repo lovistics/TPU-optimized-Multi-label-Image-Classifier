@@ -23,21 +23,6 @@ A high-performance multi-label image classifier built with PyTorch, featuring TP
 ```bash
 git clone https://github.com/lovistics/TPU-optimized-Multi-label-Image-Classifier.git
 ```
-
-## 📋 Requirements
-```
-torch>=2.0.0
-torchvision>=0.15.0
-pandas
-numpy
-scikit-learn
-matplotlib
-seaborn
-tqdm
-torch_xla  # For TPU support
-Pillow
-```
-
 ## 🔄 Training Pipeline
 1. Memory-efficient data loading
 2. Mixed precision training
