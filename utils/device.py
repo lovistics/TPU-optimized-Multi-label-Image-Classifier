@@ -1,3 +1,7 @@
+import warnings
+import torch
+warnings.filterwarnings("ignore")
+
 def check_tpu_status():
     """Check TPU availability and print detailed information."""
     try:
