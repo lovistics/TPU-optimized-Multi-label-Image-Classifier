@@ -1,3 +1,5 @@
+import os
+
 SELECTED_CLASSES = ['person', 'car', 'dog', 'chair', 'bird', 'tvmonitor', 'motorbike', 'bus']
 BATCH_SIZE = 32
 NUM_EPOCHS = 30
