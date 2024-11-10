@@ -1,3 +1,8 @@
+import torchvision
+from torch import nn
+import warnings
+warnings.filterwarnings("ignore")
+
 class ImprovedMultiLabelClassifier(nn.Module):
     def __init__(self, num_classes):
         super(ImprovedMultiLabelClassifier, self).__init__()
