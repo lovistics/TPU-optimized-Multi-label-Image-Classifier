@@ -1,3 +1,16 @@
+import os
+import torch
+from tqdm import tqdm
+import warnings
+from config.config import OUTPUT_DIR
+import torch_xla.core.xla_model as xm
+import torch_xla.distributed.parallel_loader as pl
+from torch.optim.lr_scheduler import ReduceLROnPlateau
+from torch.cuda.amp import autocast, GradScaler
+
+from utils.metrics import evaluate_model
+warnings.filterwarnings("ignore")
+
 def train_model(model, train_loader, val_loader, criterion, optimizer, num_epochs, device,
                 patience=7, min_delta=0.001):
     """Enhanced training function with mixed precision and learning rate scheduling."""
